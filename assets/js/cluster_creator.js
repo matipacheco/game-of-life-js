@@ -1,3 +1,5 @@
+import {Cell} from "./cell.js";
+
 function populateCluster() {
     let table = $(".cluster");
 

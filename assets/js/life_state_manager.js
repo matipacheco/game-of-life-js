@@ -1,15 +1,15 @@
-function getRandomTerminalStates() {
+export function getRandomTerminalStates() {
     return Math.floor(Math.random() * 2);
 }
 
-function getNextState(state) {
+export function getNextState(state) {
     return (state + 1) % 5;
 }
 
-function getIntermediateStates() {
+export function getTerminalStates() {
     return [0, 1];
 }
 
-function getIntermediateStates() {
+export function getIntermediateStates() {
     return [2, 3];
 }
