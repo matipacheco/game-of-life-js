@@ -1,3 +1,11 @@
+/*
+* NOTA PARA EL FUTURO
+*
+* import {getRandomTerminalStates} from "./life_state_manager.js";
+* export function getRandomTerminalStates()....
+*
+* */
+
 const COLORS = { 0 : "black", 1 : "black", 2 : "white", 3 : "white" };
 
 
