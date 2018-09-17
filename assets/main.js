@@ -21,7 +21,7 @@ class Cell {
 
 
 function getRandomTerminalStates() {
-    return Math.floor(Math.random() * 2);
+    return getTerminalStates()[Math.floor(Math.random() * 2)];
 }
 
 function getNextState(state) {
@@ -33,23 +33,25 @@ function getColor(state) {
 }
 
 function getTerminalStates() {
-    return [0, 1];
+    // 0 : dead, 2 : alive
+    return [0, 2];
 }
 
 function getIntermediateStates() {
-    return [2, 3];
+    // 1 : dead, 3 : alive
+    return [1, 3];
 }
 
 
 function populateCluster() {
-    const row = ".row_";
-    const col = ".col_";
+    const row = ".row_", col = ".col_";
+
+    let cell, cell_grid;
 
     for (let row_index = 1; row_index <= 5; row_index++) {
         for (let col_index = 1; col_index <= 5; col_index++) {
-            let cell      = new Cell();
-            let cell_grid = $(row + row_index).filter(col + col_index);
-
+            cell      = new Cell();
+            cell_grid = $(row + row_index).filter(col + col_index);
             cell_grid.css("background-color", getColor(cell.lifeState));
         }
 
