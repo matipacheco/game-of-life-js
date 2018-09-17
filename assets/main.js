@@ -39,13 +39,10 @@ function populateCluster() {
 
     for (let row_index = 1; row_index <= 5; row_index++) {
         for (let col_index = 1; col_index <= 5; col_index++) {
-            let cell = new Cell();
+            let cell      = new Cell();
+            let cell_grid = $(row + row_index).filter(col + col_index);
 
-            let cell_grid        = $(row + row_index).filter(col + col_index);
-            let background_color = getColor(cell.lifeState);
-            console.log(background_color );
-
-            cell_grid.css("background-color", background_color);
+            cell_grid.css("background-color", getColor(cell.lifeState));
         }
 
     }
