@@ -6,7 +6,19 @@
 *
 * */
 
-const COLORS = { 0 : "black", 1 : "black", 2 : "white", 3 : "white" };
+const dimension = 10;
+
+const COLORS = {
+    0 : "black", // 0 : dead
+    1 : "black", // 1 : about to live
+    2 : "white", // 2 : alive
+    3 : "white"  // 3 : about to die
+};
+
+function getColor(state) {
+    return COLORS[state];
+}
+
 
 
 class Cell {
@@ -26,32 +38,44 @@ class Cell {
 }
 
 
+
 function getRandomTerminalStates() {
     return getTerminalStates()[Math.floor(Math.random() * 2)];
 }
 
-function getNextState(state) {
-    return (state + 1) % 5;
+function nextState(state) {
+    return (state + 1) % 4;
 }
 
-function getColor(state) {
-    return COLORS[state];
+function aliveStates() {
+    return [2, 3];
+}
+
+function deadStates() {
+    return [0, 1];
 }
 
 function getTerminalStates() {
-    // 0 : dead, 2 : alive
     return [0, 2];
 }
 
 function getIntermediateStates() {
-    // 1 : dead, 3 : alive
     return [1, 3];
+}
+
+function cellIsAlive(cell) {
+    return aliveStates().includes(cell.lifeState);
+}
+
+function cellIsDead(cell) {
+    return deadStates().includes(cell.lifeState);
 }
 
 
 function changeCellColor(cell_grid, cell) {
     cell_grid.css("background-color", getColor(cell.lifeState));
 }
+
 
 
 function populateCluster(dimension) {
@@ -72,16 +96,15 @@ function populateCluster(dimension) {
         }
 
         cluster.push(cluster_row);
-
     }
 
     return cluster;
 };
 
 
-function main() {
-    let cluster_grid = populateCluster(10);
 
+function main() {
+    let cluster_grid = populateCluster(dimension);
 
     console.log(cluster_grid);
 }

@@ -1,2 +1,2 @@
-# game-of-life-js
-A Game of Life adaption on Javascript
+# Game of Life JS
+A Game of Life adaptation written on Javascript
