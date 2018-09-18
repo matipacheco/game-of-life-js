@@ -25,11 +25,11 @@ class Cell {
     constructor(row, col) {
         this._row = row;
         this._col = col;
-        this._lifeState = getRandomTerminalStates();
+        this._state = getRandomTerminalStates();
     }
 
-    get lifeState() {
-        return this._lifeState;
+    get state() {
+        return this._state;
     }
 
 /*    get cellPos() {
@@ -64,16 +64,16 @@ function getIntermediateStates() {
 }
 
 function cellIsAlive(cell) {
-    return aliveStates().includes(cell.lifeState);
+    return aliveStates().includes(cell.state);
 }
 
 function cellIsDead(cell) {
-    return deadStates().includes(cell.lifeState);
+    return deadStates().includes(cell.state);
 }
 
 
 function changeCellColor(cell_grid, cell) {
-    cell_grid.css("background-color", getColor(cell.lifeState));
+    cell_grid.css("background-color", getColor(cell.state));
 }
 
 
