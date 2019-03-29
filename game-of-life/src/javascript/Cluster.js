@@ -23,7 +23,7 @@ class Cluster extends Component {
       return this.renderCell(index, state)
     });
   }
-  
+
   render() {
     return (
         <div className='cluster'>
