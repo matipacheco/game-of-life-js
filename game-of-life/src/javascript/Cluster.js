@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cell from './Cell'
 
-import populateCluster from '../utils/Utils'
+import { populateCluster } from '../utils/GameUtils'
 
 import '../css/Cluster.css'
 

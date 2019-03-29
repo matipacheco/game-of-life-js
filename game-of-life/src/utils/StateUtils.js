@@ -22,4 +22,12 @@ function intermediateStates() {
   return [1, 3];
 }
 
+function isAlive(state) {
+  return aliveStates().includes(state);
+}
+
+function isDead(state) {
+  return deadStates().includes(state);
+}
+
 export default randomTerminalState;
