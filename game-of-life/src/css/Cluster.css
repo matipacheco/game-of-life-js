@@ -1,0 +1,6 @@
+.cluster {
+    display: grid;
+    grid-template-rows: repeat(5, 20%);
+    grid-template-columns: repeat(5, 20%);
+    align-items: center;
+}
