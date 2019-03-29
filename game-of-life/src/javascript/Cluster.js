@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cell from './Cell'
 
-import randomTerminalState from '../utils/Utils'
+import populateCluster from '../utils/Utils'
 
 import '../css/Cluster.css'
 
@@ -10,38 +10,24 @@ class Cluster extends Component {
     super(props);
 
     this.state = {
-      cluster: this.populateCluster(10)
+      cluster: populateCluster(10)
     }
   }
 
-  populateCluster(clusterDimension) {
-    let cluster =[];
-
-    for (let i = 0; i < clusterDimension; i++) {
-      let clusterRow = [];
-
-      for (let j = 0; j < clusterDimension; j++) {
-        clusterRow.push(randomTerminalState())
-      }
-
-      cluster.push(clusterRow)
-    }
-
-    return cluster;
+  renderCell(index, state) {
+    return <Cell key={ index } state={ state }/>
   }
 
-  renderCell(state) {
-    return <Cell state={state}/>
-  }
-
-  render() {
-    let cluster = this.state.cluster.flat().map((state) => {
-      return this.renderCell(state)
+  renderCluster() {
+    return this.state.cluster.flat().map((state, index) => {
+      return this.renderCell(index, state)
     });
-
+  }
+  
+  render() {
     return (
         <div className='cluster'>
-          { cluster }
+          { this.renderCluster() }
         </div>
     );
   }
