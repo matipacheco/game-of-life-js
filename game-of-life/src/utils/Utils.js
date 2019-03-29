@@ -1,25 +1,25 @@
-function random_terminal_state() {
-  return terminal_states()[Math.floor(Math.random() * 2)];
+function randomTerminalState() {
+  return terminalStates()[Math.floor(Math.random() * 2)];
 }
 
-function next_state(state) {
+function nextState(state) {
   return (state + 1) % 4;
 }
 
-function alive_states() {
+function aliveStates() {
   return [2, 3];
 }
 
-function dead_states() {
+function deadStates() {
   return [0, 1];
 }
 
-function terminal_states() {
+function terminalStates() {
   return [0, 2];
 }
 
-function intermediate_states() {
+function intermediateStates() {
   return [1, 3];
 }
 
-export default random_terminal_state;
+export default randomTerminalState;
