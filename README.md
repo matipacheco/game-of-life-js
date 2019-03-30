@@ -27,4 +27,6 @@ How did I create the app?
     
 ## Side note
 
-I'm sure the methods `gameOfLife` and `aliveNeighbors` need some refactoring, *but fuck it!*, it works :smirking_face:
+* I'm sure the methods `gameOfLife` and `aliveNeighbors` need some refactoring, *but fuck it!*, it works :smirking_face:
+* Since in every cycle the state of the Board component changes, and cell's colors are set randomly, it may happen 
+(almost every time) that a living cell change its color even tough it was not supposed to die.   
