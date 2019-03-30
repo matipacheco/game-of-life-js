@@ -1,4 +1,4 @@
-#Finally! The Game of Life
+# Finally! The Game of Life
 
 A Game of Life adaption using React!
 
