@@ -30,4 +30,9 @@ function isDead(state) {
   return deadStates().includes(state);
 }
 
-export default randomTerminalState;
+export {
+  randomTerminalState,
+  intermediateStates,
+  nextState,
+  deadStates
+};
