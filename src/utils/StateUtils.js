@@ -1,4 +1,4 @@
-/***
+/**
  * Method that return a random terminal state (0 or 2)
  * @returns {number}
  */
@@ -7,7 +7,7 @@ function randomTerminalState() {
 }
 
 
-/***
+/**
  * Given a number between 0 and 3, this method returns the next number in the series.
  * It defines the following cycle/loop: 0, 1, 2, 3, 0, 1, 2, 3, 0, ...
  * @param state
@@ -18,7 +18,7 @@ function nextState(state) {
 }
 
 
-/***
+/**
  * Method that returns the state in which a cell is considered alive
  * @returns {number[]}
  */
@@ -27,7 +27,7 @@ function aliveStates() {
 }
 
 
-/***
+/**
  * Method that returns the state in which a cell is considered dead
  * @returns {number[]}
  */
@@ -36,7 +36,7 @@ function deadStates() {
 }
 
 
-/***
+/**
  * Method that returns the so called Terminal states.
  * 0 and 2... alive or dead
  * @returns {number[]}
@@ -46,7 +46,7 @@ function terminalStates() {
 }
 
 
-/***
+/**
  * Method that returns the so called Intermediate states.
  * 1 and 3... being born or dying
  * @returns {number[]}
@@ -56,7 +56,7 @@ function intermediateStates() {
 }
 
 
-/***
+/**
  * Method that checks if a cell is alive
  * @param state
  * @returns {boolean}
@@ -67,7 +67,7 @@ function isAlive(state) {
 
 
 /*
-/!***
+/!**
  * Method that checks if a cell is dead
  * @param state
  * @returns {boolean}

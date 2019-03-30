@@ -1,6 +1,6 @@
 import { clusterDimension } from './Constants'
 
-/***
+/**
  * Method that transform an array on a N x N matrix
  * @param array
  * @param dimension

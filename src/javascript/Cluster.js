@@ -24,6 +24,10 @@ class Cluster extends Component {
     });
   }
 
+  GoL() {
+
+  }
+
   render() {
     return (
         <div className='cluster'>
