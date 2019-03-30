@@ -26,8 +26,10 @@ class Cluster extends Component {
   }
 
   cycle() {
+    let newCluster = gameOfLife(this.state.cluster);
+
     this.setState({
-      cluster: this.gameOfLife()
+      cluster: liveOrDie(newCluster)
     });
   }
 
@@ -40,11 +42,6 @@ class Cluster extends Component {
     return this.state.cluster.flat().map((state, index) => {
       return this.renderCell(index, state)
     });
-  }
-
-  gameOfLife() {
-    let newCluster = gameOfLife(this.state.cluster);
-    return liveOrDie(newCluster);
   }
 
   render() {
