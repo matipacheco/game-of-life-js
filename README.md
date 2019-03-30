@@ -2,7 +2,7 @@
 
 A Game of Life adaption using React!
 
-![Game of Life](public/game-of-life-2.gif)
+![Game of Life](public/game-of-life.gif)
 
 ## Available Scripts
 

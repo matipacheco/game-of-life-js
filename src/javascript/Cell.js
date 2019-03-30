@@ -8,7 +8,7 @@ class Cell extends Component {
     return (
       <div className='cell'
            key={ this.props.index }
-           style={{ backgroundColor: (deadStates().includes(this.props.state) ? 'black' : 'white') }}>
+           style={{ backgroundColor: (deadStates().includes(this.props.state) ? 'white' : 'black') }}>
       </div>
     );
   }
