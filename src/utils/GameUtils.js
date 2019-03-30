@@ -66,12 +66,12 @@ function aliveNeighbors(cluster, rowIndex, colIndex) {
  * Method that holds the basic logic of the Game of Life
  * @param cluster_grid
  */
-function GoL(cluster_grid) {
-  for (let i = 0; i < clusterDimension; i++) {
-    for (let j = 0; j < clusterDimension; j++) {
+function GoL(cluster, dimension = clusterDimension) {
+  for (let i = 0; i < dimension; i++) {
+    for (let j = 0; j < dimension; j++) {
 
-      let state = cluster_grid[i][j];
-      let aliveNeighbors = aliveNeighbors(cluster_grid, i, j);
+      let state = cluster[i][j];
+      let aliveNeighbors = aliveNeighbors(cluster, i, j);
 
       if (isAlive(state)) {
         if ((aliveNeighbors <= 1) || (aliveNeighbors >= 4)) {
