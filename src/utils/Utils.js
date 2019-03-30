@@ -1,4 +1,5 @@
 import { clusterDimension } from './Constants'
+import { colorPalette } from './Constants'
 
 /**
  * Method that transform an array on a N x N matrix
@@ -6,6 +7,11 @@ import { clusterDimension } from './Constants'
  * @param dimension
  * @returns {*}
  */
-export default function toMatrix(array, dimension = clusterDimension) {
+export function toMatrix(array, dimension = clusterDimension) {
   return array.reduce((rows, key, index) => (index % dimension === 0 ? rows.push([key]) : rows[rows.length-1].push(key)) && rows, []);
+}
+
+
+export function randomColor() {
+  return colorPalette[Math.floor(Math.random() * colorPalette.length)]
 }

@@ -5,7 +5,7 @@ import {
   isAlive
 } from './StateUtils'
 
-import toMatrix from './Utils'
+import { toMatrix } from './Utils'
 import { clusterDimension } from './Constants'
 
 
