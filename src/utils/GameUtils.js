@@ -11,22 +11,15 @@ import { clusterDimension } from './Constants'
 
 /**
  * Initial setup method. It creates a random cell cluster
+ * @param dimension
  * @returns {Array}
  */
 function populateCluster(dimension = clusterDimension) {
-  let cluster =[];
+  let cluster = [...Array(dimension * dimension).keys()].map(() => {
+    return randomTerminalState()
+  });
 
-  for (let i = 0; i < dimension; i++) {
-    let clusterRow = [];
-
-    for (let j = 0; j < dimension; j++) {
-      clusterRow.push(randomTerminalState())
-    }
-
-    cluster.push(clusterRow)
-  }
-
-  return cluster;
+  return toMatrix(cluster);
 }
 
 
@@ -64,7 +57,8 @@ function aliveNeighbors(cluster, rowIndex, colIndex) {
 
 /**
  * Method that holds the basic logic of the Game of Life
- * @param cluster_grid
+ * @param cluster
+ * @param dimension
  */
 function GoL(cluster, dimension = clusterDimension) {
   for (let i = 0; i < dimension; i++) {
@@ -103,6 +97,5 @@ function liveOrDie(cluster) {
 
 
 export {
-  populateCluster,
-  liveOrDie
+  populateCluster
 }
