@@ -2,7 +2,7 @@ import Cell from './Cell'
 import '../css/Cluster.css'
 
 import React, { Component } from 'react'
-import { populateCluster } from '../utils/GameUtils'
+import { populateCluster, gameOfLife, liveOrDie } from '../utils/GameUtils'
 
 
 class Cluster extends Component {
@@ -14,6 +14,24 @@ class Cluster extends Component {
     }
   }
 
+  componentDidMount() {
+    this.timerID = setInterval(
+        () => this.cycle(),
+        1000
+    )
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  cycle() {
+    this.setState({
+      cluster: this.gameOfLife()
+    });
+  }
+
+
   renderCell(index, state) {
     return <Cell key={ index } state={ state }/>
   }
@@ -24,8 +42,9 @@ class Cluster extends Component {
     });
   }
 
-  GoL() {
-
+  gameOfLife() {
+    let newCluster = gameOfLife(this.state.cluster);
+    return liveOrDie(newCluster);
   }
 
   render() {

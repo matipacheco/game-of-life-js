@@ -39,10 +39,10 @@ function aliveNeighbors(cluster, rowIndex, colIndex) {
       if (i === rowIndex && j === colIndex) { continue; }
 
       try {
-        let cell = cluster[i][j];
+        let state = cluster[i][j];
 
-        if (cell == null) { continue; }
-        if (isAlive) { aliveNeighbors++; }
+        if (state == null) { continue; }
+        if (isAlive(state)) { aliveNeighbors++; }
       }
       catch (e) { }
     }
@@ -59,7 +59,7 @@ function aliveNeighbors(cluster, rowIndex, colIndex) {
  * @returns {*}
  * @constructor
  */
-function GoL(cluster, dimension = clusterDimension) {
+function gameOfLife(cluster, dimension = clusterDimension) {
   let newCluster = [];
 
   for (let i = 0; i < dimension; i++) {
@@ -97,5 +97,7 @@ function liveOrDie(cluster) {
 
 
 export {
-  populateCluster
+  populateCluster,
+  gameOfLife,
+  liveOrDie
 }
