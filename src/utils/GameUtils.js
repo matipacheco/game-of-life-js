@@ -53,8 +53,6 @@ function aliveNeighbors(cluster, rowIndex, colIndex) {
 }
 
 
-
-
 /**
  * Method that holds the basic logic of the Game of Life
  * @param cluster
@@ -82,17 +80,16 @@ function GoL(cluster, dimension = clusterDimension) {
 }
 
 
-
 /**
  * Method that changes the state of the cells whose state it's an intermediate state
  * @param cluster
  */
 function liveOrDie(cluster) {
-  let finalCluster = cluster.map((state) => {
+  let finalCluster = cluster.flat().map((state) => {
     return (intermediateStates().includes(state) ? nextState(state) : state)
   });
 
-  return toMatrix(finalCluster, )
+  return toMatrix(finalCluster)
 }
 
 
