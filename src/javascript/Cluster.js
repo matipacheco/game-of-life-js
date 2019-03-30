@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
 import Cell from './Cell'
+import '../css/Cluster.css'
 
+import React, { Component } from 'react'
 import { populateCluster } from '../utils/GameUtils'
 
-import '../css/Cluster.css'
 
 class Cluster extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      cluster: populateCluster(10)
+      cluster: populateCluster()
     }
   }
 

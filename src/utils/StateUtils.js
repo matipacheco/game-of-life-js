@@ -26,13 +26,16 @@ function isAlive(state) {
   return aliveStates().includes(state);
 }
 
+/*
 function isDead(state) {
-  return deadStates().includes(state);
+  return !isAlive(state);
 }
+*/
 
 export {
   randomTerminalState,
   intermediateStates,
   nextState,
-  deadStates
+  deadStates,
+  isAlive
 };
