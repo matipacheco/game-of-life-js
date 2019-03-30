@@ -2,7 +2,7 @@
 
 A Game of Life adaption using React!
 
-![Game of Life](https://gph.is/g/4ogD2L4)
+![Game of Life](http://www.giphy.com/gifs/dQtVTy4z28Z8NMiR9m)
 
 ## Available Scripts
 
@@ -24,3 +24,7 @@ Additional commands:
 How did I create the app?
 
     npx create-react-app game-of-life
+    
+## Side note
+
+I'm sure the methods `gameOfLife` and `aliveNeighbors` need some refactoring, *but fuck it!*, it works :smirking_face:
