@@ -1,5 +1,9 @@
-import randomTerminalState from './StateUtils'
+import { randomTerminalState, intermediateStates, nextState } from './StateUtils'
 
+/**
+ * Initial setup method. It creates a random cell cluster
+ * @returns {Array}
+ */
 function populateCluster(clusterDimension) {
   let cluster =[];
 
@@ -16,23 +20,14 @@ function populateCluster(clusterDimension) {
   return cluster;
 }
 
+/**
+ * Method that changes the state of the cells whose state it's an intermediate state
+ * @param cluster
+ */
 function liveOrDie(cluster) {
-  
+  return cluster.map((state) => {
+    return (intermediateStates().includes(state) ? nextState(state) : state)
+  });
 }
-
-/*
-function terminate_intermediate_cells(cluster_grid) {
-  for (let row_index = 0; row_index < cluster_dimension; row_index++) {
-    for (let col_index = 0; col_index < cluster_dimension; col_index) {
-
-      let cell = cluster_grid[row_index][col_index];
-
-      if (intermediate_states().includes(cell.state)){
-        cell.state = next_state(cell.state);
-        change_cell_color(get_cell_grid(row_index, col_index), cell);
-      }
-    }
-  }
-}*/
 
 export { populateCluster, liveOrDie }
